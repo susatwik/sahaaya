@@ -61,7 +61,7 @@ export const ProtocolDetail: React.FC = () => {
   };
 
   return (
-    <div className="space-y-4 max-w-3xl mx-auto animate-fade-in pb-16">
+    <div className="space-y-4 max-w-3xl mx-auto animate-fade-in pb-28 sm:pb-16 w-full min-w-0 box-border overflow-x-hidden">
       {/* Top Bar */}
       <div className="flex items-center justify-between pb-1">
         <button
@@ -88,9 +88,9 @@ export const ProtocolDetail: React.FC = () => {
       </div>
 
       {/* Protocol Header Card with Category Artwork */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-2xs space-y-3">
-        <div className="flex items-start gap-4">
-          <div className="w-16 h-16 rounded-2xl overflow-hidden shrink-0 shadow-2xs border border-slate-200 bg-slate-50">
+      <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-2xs space-y-3 w-full min-w-0 box-border">
+        <div className="flex items-start gap-3 sm:gap-4">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl overflow-hidden shrink-0 shadow-2xs border border-slate-200 bg-slate-50">
             <img
               src={getCategoryArtwork(doc.category)}
               onError={(e) => {
@@ -98,42 +98,42 @@ export const ProtocolDetail: React.FC = () => {
                 (e.currentTarget as HTMLImageElement).src = svgFallback;
               }}
               alt={title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center max-w-full"
             />
           </div>
 
           <div className="flex-1 min-w-0 space-y-1">
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">
-              <FileCheck className="w-3.5 h-3.5 text-emerald-700" />
+              <FileCheck className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
               <span>{t.officialGuideline}</span>
             </div>
 
-            <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 leading-tight">
+            <h1 className="text-lg sm:text-2xl font-extrabold text-slate-900 leading-tight break-words">
               {title}
             </h1>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed break-words">
               {subtitle}
             </p>
           </div>
         </div>
 
-        <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-          <span>Source: {doc.sourceDoc}</span>
-          <span>Version {doc.version} • Updated {doc.lastUpdated}</span>
+        <div className="pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-slate-500 gap-1 sm:gap-2">
+          <span className="break-words">Source: {doc.sourceDoc}</span>
+          <span className="shrink-0">Version {doc.version} • Updated {doc.lastUpdated}</span>
         </div>
       </div>
 
       {/* Ask Question Quick CTA */}
-      <div className="bg-sahaaya-soft-blue border border-blue-200/80 rounded-2xl p-3.5 flex items-center justify-between gap-3 shadow-2xs">
-        <div className="flex items-center gap-2.5">
+      <div className="bg-sahaaya-soft-blue border border-blue-200/80 rounded-2xl p-3 sm:p-3.5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-2xs">
+        <div className="flex items-center gap-2.5 min-w-0">
           <HelpCircle className="w-5 h-5 text-sahaaya-navy shrink-0" />
-          <p className="text-xs font-semibold text-slate-800">
+          <p className="text-xs font-semibold text-slate-800 leading-tight">
             {isTe ? 'ఈ ప్రొటోకాల్ గురించి సందేహం ఉందా?' : 'Have a question about this protocol?'}
           </p>
         </div>
         <button
           onClick={() => navigate(`/ask?q=${encodeURIComponent(doc.title)}`)}
-          className="px-3 py-1.5 rounded-xl bg-sahaaya-navy hover:bg-sahaaya-navy-light text-white text-xs font-bold shrink-0 transition-colors"
+          className="px-3.5 py-2 rounded-xl bg-sahaaya-navy hover:bg-sahaaya-navy-light text-white text-xs font-bold shrink-0 transition-colors text-center"
         >
           {t.askQuestionTitle}
         </button>

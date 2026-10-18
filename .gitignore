@@ -34,3 +34,4 @@ dist-ssr
 # Temporary files
 tmp/
 temp/
+.vercel
