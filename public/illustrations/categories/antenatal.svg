@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <circle cx="40" cy="40" r="38" fill="#FDE8E8"/>
+  <!-- Mother silhouette holding belly with love -->
+  <!-- Head -->
+  <circle cx="36" cy="22" r="8" fill="#E11D48"/>
+  <!-- Bun -->
+  <circle cx="28" cy="22" r="4" fill="#BE123C"/>
+  <!-- Pregnant silhouette curve -->
+  <path d="M34 30 C 28 36, 26 50, 26 62 L 48 62 C 54 50, 52 42, 44 38 C 42 34, 38 30, 34 30 Z" fill="#E11D48"/>
+  <!-- Baby bump in belly highlight -->
+  <path d="M44 42 C 48 46, 48 54, 43 58" stroke="#FFE4E6" stroke-width="3" stroke-linecap="round"/>
+  <!-- Loving hand on belly -->
+  <path d="M34 44 Q 42 50 40 56" stroke="#FDA4AF" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Gentle sparkle / heart -->
+  <path d="M54 22 C 54 18, 59 18, 61 21 C 63 18, 68 18, 68 22 C 68 28, 61 31, 61 31 C 61 31, 54 28, 54 22 Z" fill="#F43F5E"/>
+</svg>

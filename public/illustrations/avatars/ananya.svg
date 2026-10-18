@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Circular background -->
+  <circle cx="50" cy="50" r="48" fill="#FDF2F8" stroke="#FBCFE8" stroke-width="2"/>
+  <!-- Hair ribbons / pigtails -->
+  <circle cx="26" cy="38" r="9" fill="#1C1917"/>
+  <circle cx="74" cy="38" r="9" fill="#1C1917"/>
+  <circle cx="28" cy="45" r="4" fill="#EC4899"/>
+  <circle cx="72" cy="45" r="4" fill="#EC4899"/>
+  <!-- Head -->
+  <circle cx="50" cy="48" r="21" fill="#E8B48A"/>
+  <!-- Bangs -->
+  <path d="M32 40 C 38 30, 62 30, 68 40 C 60 34, 40 34, 32 40 Z" fill="#1C1917"/>
+  <!-- Eyes -->
+  <circle cx="43" cy="48" r="2.8" fill="#1C1917"/>
+  <circle cx="57" cy="48" r="2.8" fill="#1C1917"/>
+  <!-- Rosy cheeks -->
+  <circle cx="38" cy="54" r="3" fill="#FB7185" opacity="0.4"/>
+  <circle cx="62" cy="54" r="3" fill="#FB7185" opacity="0.4"/>
+  <!-- Smile -->
+  <path d="M46 58 Q 50 63 54 58" stroke="#BE123C" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Frock (Pink / Violet) -->
+  <path d="M25 84 C 33 72, 67 72, 75 84 L 85 100 L 15 100 Z" fill="#DB2777"/>
+  <circle cx="50" cy="80" r="3" fill="#FDE047"/>
+</svg>

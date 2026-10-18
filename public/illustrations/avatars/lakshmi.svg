@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Circular background -->
+  <circle cx="50" cy="50" r="48" fill="#FDE8E8" stroke="#FCA5A5" stroke-width="2"/>
+  <!-- Hair Bun -->
+  <circle cx="30" cy="46" r="14" fill="#291A14"/>
+  <!-- Head -->
+  <circle cx="52" cy="48" r="21" fill="#E2A77A"/>
+  <!-- Front Hair -->
+  <path d="M33 42 C 38 28, 65 28, 71 42 C 64 34, 52 34, 33 42 Z" fill="#20130F"/>
+  <!-- Red Bindi -->
+  <circle cx="52" cy="40" r="2.5" fill="#DC2626"/>
+  <!-- Eyes -->
+  <ellipse cx="45" cy="48" rx="2.2" ry="2.8" fill="#20130F"/>
+  <ellipse cx="59" cy="48" rx="2.2" ry="2.8" fill="#20130F"/>
+  <!-- Smile -->
+  <path d="M46 58 Q 52 64 58 58" stroke="#9F1239" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Saree Body (Rose/Red) -->
+  <path d="M22 84 C 32 72, 72 72, 82 84 L 92 100 L 12 100 Z" fill="#E11D48"/>
+  <path d="M32 78 Q 52 90 70 100" stroke="#FDE047" stroke-width="3" fill="none"/>
+</svg>

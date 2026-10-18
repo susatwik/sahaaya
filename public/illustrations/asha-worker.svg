@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none" role="img" aria-label="ASHA Worker in rural village">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EAF3FF"/>
+      <stop offset="100%" stop-color="#D7E8FA"/>
+    </linearGradient>
+    <linearGradient id="hillGrad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#72C49A"/>
+      <stop offset="100%" stop-color="#4EAA7C"/>
+    </linearGradient>
+    <linearGradient id="hillGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4EAA7C"/>
+      <stop offset="100%" stop-color="#2D855B"/>
+    </linearGradient>
+    <linearGradient id="sariBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E4CB0"/>
+      <stop offset="100%" stop-color="#173F91"/>
+    </linearGradient>
+    <linearGradient id="skinTone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2A77A"/>
+      <stop offset="100%" stop-color="#CA8C5E"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="400" height="320" rx="20" fill="url(#skyGrad)"/>
+
+  <!-- Sun -->
+  <circle cx="340" cy="70" r="28" fill="#FFF2BF" opacity="0.8"/>
+
+  <!-- Distant Village Hills -->
+  <path d="M-20 220 Q 90 140 200 190 T 420 180 L 420 320 L -20 320 Z" fill="url(#hillGrad1)" opacity="0.85"/>
+  <path d="M-10 240 Q 130 180 260 230 T 430 210 L 430 320 L -10 320 Z" fill="url(#hillGrad2)"/>
+
+  <!-- Village Trees & Palm Trees in Background -->
+  <g opacity="0.9">
+    <!-- Tree 1 -->
+    <path d="M40 230 C 25 210, 25 180, 45 165 C 65 150, 85 170, 80 190 C 85 200, 75 225, 40 230 Z" fill="#296E49"/>
+    <!-- Tree 2 -->
+    <path d="M320 220 C 305 200, 310 170, 330 160 C 350 150, 370 170, 360 195 C 365 210, 350 225, 320 220 Z" fill="#235E3E"/>
+    <!-- Village Hut roof -->
+    <path d="M340 240 L 375 220 L 395 240 Z" fill="#D97706"/>
+    <rect x="345" y="240" width="45" height="25" fill="#FFFBEB"/>
+  </g>
+
+  <!-- Foreground Field -->
+  <path d="M-20 270 Q 180 250 420 265 L 420 320 L -20 320 Z" fill="#205B3A"/>
+
+  <!-- ASHA Health Worker Character -->
+  <g transform="translate(45, 10)" filter="url(#softShadow)">
+    <!-- Back Hair Bun -->
+    <ellipse cx="140" cy="98" rx="28" ry="30" fill="#2B1E1A"/>
+
+    <!-- Neck -->
+    <path d="M132 135 L 148 135 L 152 165 L 128 165 Z" fill="url(#skinTone)"/>
+
+    <!-- Head & Face -->
+    <path d="M115 88 C 115 55, 165 55, 165 88 C 165 125, 115 125, 115 88 Z" fill="url(#skinTone)"/>
+
+    <!-- Hair Front / Style with White Scarf / Border -->
+    <path d="M115 85 C 115 62, 132 50, 140 50 C 148 50, 165 62, 165 85 C 160 72, 148 68, 140 68 C 132 68, 120 72, 115 85 Z" fill="#241814"/>
+    <path d="M115 82 C 115 56, 135 46, 140 46 C 145 46, 165 56, 165 82" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Facial Features -->
+    <!-- Eyes -->
+    <ellipse cx="130" cy="88" rx="3.5" ry="4" fill="#231713"/>
+    <ellipse cx="150" cy="88" rx="3.5" ry="4" fill="#231713"/>
+    <circle cx="131" cy="86.5" r="1.2" fill="#FFFFFF"/>
+    <circle cx="151" cy="86.5" r="1.2" fill="#FFFFFF"/>
+    <!-- Eyebrows -->
+    <path d="M125 81 Q 130 78 135 81" stroke="#231713" stroke-width="2" stroke-linecap="round"/>
+    <path d="M145 81 Q 150 78 155 81" stroke="#231713" stroke-width="2" stroke-linecap="round"/>
+    <!-- Red Bindi -->
+    <circle cx="140" cy="80" r="2.5" fill="#DC2626"/>
+    <!-- Nose -->
+    <path d="M140 88 L 138 97 L 142 97" stroke="#BA7B50" stroke-width="2" stroke-linecap="round"/>
+    <!-- Smile -->
+    <path d="M133 104 Q 140 111 147 104" stroke="#881337" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Earrings -->
+    <circle cx="114" cy="98" r="3" fill="#F59E0B"/>
+    <circle cx="166" cy="98" r="3" fill="#F59E0B"/>
+
+    <!-- Body & Uniform / Saree -->
+    <!-- Inner Blouse / Saree -->
+    <path d="M118 160 L 162 160 L 175 220 L 105 220 Z" fill="#0D9488"/>
+
+    <!-- Saree Pallu & Drape (Navy Blue with Golden/Teal border) -->
+    <path d="M102 165 C 115 155, 165 155, 178 165 L 195 295 L 85 295 Z" fill="url(#sariBlue)"/>
+    <!-- Diagonal Saree Pallu across chest -->
+    <path d="M110 162 Q 135 185 165 240 L 182 230 Q 150 170 125 158 Z" fill="#159B78"/>
+    <path d="M110 162 Q 135 185 165 240" stroke="#FDE047" stroke-width="3" fill="none"/>
+
+    <!-- ASHA ID Card Lanyard -->
+    <path d="M130 160 L 138 200 L 146 160" stroke="#EF4444" stroke-width="2.5" fill="none"/>
+    <!-- ID Card Badge -->
+    <rect x="132" y="198" width="16" height="22" rx="2" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="135" y="201" width="10" height="7" fill="#0284C7"/>
+    <line x1="135" y1="212" x2="145" y2="212" stroke="#64748B" stroke-width="1.5"/>
+    <line x1="135" y1="216" x2="143" y2="216" stroke="#94A3B8" stroke-width="1.5"/>
+
+    <!-- Hands in Namaste / Healthcare Register Fold -->
+    <!-- Arms -->
+    <path d="M105 170 Q 95 210 125 220 L 135 205 Q 115 195 120 170 Z" fill="url(#skinTone)"/>
+    <path d="M175 170 Q 185 210 155 220 L 145 205 Q 165 195 160 170 Z" fill="url(#skinTone)"/>
+
+    <!-- Hands folded in Namaste Greeting -->
+    <path d="M132 205 Q 140 195 140 215 Q 140 195 148 205 Q 140 220 132 205 Z" fill="url(#skinTone)"/>
+    <!-- Bangles on wrists -->
+    <ellipse cx="127" cy="214" rx="3" ry="5" fill="#F59E0B"/>
+    <ellipse cx="153" cy="214" rx="3" ry="5" fill="#159B78"/>
+
+    <!-- Medical Health Bag at Side -->
+    <rect x="175" y="225" width="36" height="30" rx="5" fill="#FFFFFF" stroke="#173F91" stroke-width="2"/>
+    <path d="M185 225 L 185 218 Q 193 214 201 218 L 201 225" fill="none" stroke="#173F91" stroke-width="2.5"/>
+    <!-- Red Cross on Bag -->
+    <rect x="190" y="235" width="6" height="10" fill="#DC2626"/>
+    <rect x="188" y="237" width="10" height="6" fill="#DC2626"/>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="shieldGrad" x1="10" y1="10" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#159B78"/>
+      <stop offset="1" stop-color="#173F91"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer Shield Silhouette -->
+  <path d="M60 10 C85 10, 108 20, 108 45 C108 82, 60 110, 60 110 C60 110, 12 82, 12 45 C12 20, 35 10, 60 10 Z" fill="#EAF3FF" stroke="#173F91" stroke-width="4.5" stroke-linejoin="round"/>
+  <!-- Inner Heart Curves & Protective Hands in Teal/Navy -->
+  <path d="M60 28 C48 14, 26 16, 22 36 C18 55, 44 78, 60 94 C76 78, 102 55, 98 36 C94 16, 72 14, 60 28 Z" fill="url(#shieldGrad)"/>
+  <!-- Central Caring Figure in Pure White -->
+  <circle cx="60" cy="46" r="9" fill="#FFFFFF"/>
+  <path d="M46 70 C46 59, 53 55, 60 55 C67 55, 74 59, 74 70 C74 75, 60 78, 60 78 C60 78, 46 75, 46 70 Z" fill="#FFFFFF"/>
+  <!-- Medical Plus / Care Accent -->
+  <rect x="56" y="80" width="8" height="16" rx="2.5" fill="#E7F7EF"/>
+  <rect x="52" y="84" width="16" height="8" rx="2.5" fill="#E7F7EF"/>
+</svg>

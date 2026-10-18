@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <circle cx="40" cy="40" r="38" fill="#FCE7F3"/>
+  <!-- Warning Triangle (Red/Rose) -->
+  <path d="M40 16 L 66 58 C 68 61, 66 64, 62 64 L 18 64 C 14 64, 12 61, 14 58 L 40 16 Z" fill="#E11D48"/>
+  <!-- Exclamation Mark Inside -->
+  <rect x="38" y="30" width="4.5" height="17" rx="2.2" fill="#FFFFFF"/>
+  <circle cx="40.25" cy="54" r="2.8" fill="#FFFFFF"/>
+  <!-- Radiating Emergency Alert Pulse -->
+  <path d="M22 28 C 16 35, 16 45, 20 52" stroke="#FDA4AF" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M58 28 C 64 35, 64 45, 60 52" stroke="#FDA4AF" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

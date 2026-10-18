@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Shield/Heart Background in Sahaaya Teal and Navy -->
+  <defs>
+    <linearGradient id="sahaayaGrad" x1="10" y1="10" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#159B78"/>
+      <stop offset="1" stop-color="#173F91"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer Shield Silhouette -->
+  <path d="M60 12 C82 12, 104 22, 104 44 C104 78, 60 106, 60 106 C60 106, 16 78, 16 44 C16 22, 38 12, 60 12 Z" fill="#EAF3FF" stroke="#173F91" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Inner Heart Curves & Protective Hands in Teal -->
+  <path d="M60 30 C50 18, 30 20, 26 38 C22 55, 45 76, 60 92 C75 76, 98 55, 94 38 C90 20, 70 18, 60 30 Z" fill="url(#sahaayaGrad)"/>
+  <!-- Central Figure / Health Worker / Child in White -->
+  <circle cx="60" cy="46" r="8" fill="#FFFFFF"/>
+  <path d="M48 68 C48 58, 54 55, 60 55 C66 55, 72 58, 72 68 C72 73, 60 76, 60 76 C60 76, 48 73, 48 68 Z" fill="#FFFFFF"/>
+  <!-- Medical Plus / Care Accent -->
+  <rect x="57" y="78" width="6" height="14" rx="2" fill="#E7F7EF"/>
+  <rect x="53" y="82" width="14" height="6" rx="2" fill="#E7F7EF"/>
+</svg>
