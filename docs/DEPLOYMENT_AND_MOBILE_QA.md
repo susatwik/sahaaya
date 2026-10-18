@@ -9,6 +9,8 @@ Sahaaya Health is an offline-first healthcare Progressive Web Application (PWA) 
 - **Production Build**: Verified with zero TypeScript or Vite errors (`npm run build` in ~2.4s).
 - **GitHub Target**: `https://github.com/susatwik/sahaaya`
 - **Default Branch**: `main`
+- **Initial Commit SHA**: `a103d1d`
+- **Live Vercel Production URL**: **`https://sahaaya-pi.vercel.app`** (Verified HTTP/2 200, Service Worker & Manifest Active)
 
 ---
 
