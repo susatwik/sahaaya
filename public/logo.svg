@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
-  <!-- Shield/Heart Background in Sahaaya Teal and Navy -->
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="sahaayaGrad" x1="10" y1="10" x2="110" y2="110" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#159B78"/>
-      <stop offset="1" stop-color="#173F91"/>
+    <linearGradient id="logoBlueGrad" x1="15" y1="20" x2="50" y2="85" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB" />
+      <stop offset="1" stop-color="#173F91" />
+    </linearGradient>
+    <linearGradient id="logoTealGrad" x1="85" y1="20" x2="50" y2="85" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1EC298" />
+      <stop offset="1" stop-color="#108665" />
     </linearGradient>
   </defs>
-  <!-- Outer Shield Silhouette -->
-  <path d="M60 12 C82 12, 104 22, 104 44 C104 78, 60 106, 60 106 C60 106, 16 78, 16 44 C16 22, 38 12, 60 12 Z" fill="#EAF3FF" stroke="#173F91" stroke-width="4" stroke-linejoin="round"/>
-  <!-- Inner Heart Curves & Protective Hands in Teal -->
-  <path d="M60 30 C50 18, 30 20, 26 38 C22 55, 45 76, 60 92 C75 76, 98 55, 94 38 C90 20, 70 18, 60 30 Z" fill="url(#sahaayaGrad)"/>
-  <!-- Central Figure / Health Worker / Child in White -->
-  <circle cx="60" cy="46" r="8" fill="#FFFFFF"/>
-  <path d="M48 68 C48 58, 54 55, 60 55 C66 55, 72 58, 72 68 C72 73, 60 76, 60 76 C60 76, 48 73, 48 68 Z" fill="#FFFFFF"/>
-  <!-- Medical Plus / Care Accent -->
-  <rect x="57" y="78" width="6" height="14" rx="2" fill="#E7F7EF"/>
-  <rect x="53" y="82" width="14" height="6" rx="2" fill="#E7F7EF"/>
+  <!-- Left Blue Half -->
+  <path d="M50,24 C40,13 22,12 13,24 C4,36 5,55 22,71 C33,81 44,86 50,88 Z" fill="url(#logoBlueGrad)" />
+  <!-- Right Teal/Green Half -->
+  <path d="M50,24 C60,13 78,12 87,24 C96,36 95,55 78,71 C67,81 56,86 50,88 Z" fill="url(#logoTealGrad)" />
+  <!-- Heart Outline -->
+  <path d="M50,24 C40,13 22,12 13,24 C4,36 5,55 22,71 C33,81 44,86 50,88 C56,86 67,81 78,71 C95,55 96,36 87,24 C78,12 60,13 50,24 Z" fill="none" stroke="#0F2B66" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- White Human Figure -->
+  <circle cx="50" cy="37.5" r="5.8" fill="#FFFFFF" />
+  <path d="M50,78 C48.5,74 47.5,63 47,56 C42.5,53.5 37,49 32.5,43 C31.5,41.5 33,39.5 35,40.5 C39,42.5 44,47 47.5,49.5 C48,47.5 48.5,46 50,46 C51.5,46 52,47.5 52.5,49.5 C56,47 61,42.5 65,40.5 C67,39.5 68.5,41.5 67.5,43 C63,49 57.5,53.5 53,56 C52.5,63 51.5,74 50,78 Z" fill="#FFFFFF" />
 </svg>
