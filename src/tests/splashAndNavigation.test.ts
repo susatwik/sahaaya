@@ -20,7 +20,7 @@ describe('Splash Animation, Mobile Navigation & Settings Page Verification', () 
   it('verifies SahaayaLogo renders vector SVG with blue half, green half, and human figure', () => {
     expect(logoContent).toContain('logoBlueGrad');
     expect(logoContent).toContain('logoTealGrad');
-    expect(logoContent).toContain('#0F2B66'); // Heart outline stroke
+    expect(logoContent).toContain('#173F91'); // Heart outline stroke (Navy #173F91)
     expect(logoContent).toContain('fill="#FFFFFF"'); // White human figure
     expect(publicLogo).toContain('logoBlueGrad');
     expect(publicLogo).toContain('logoTealGrad');
@@ -40,8 +40,8 @@ describe('Splash Animation, Mobile Navigation & Settings Page Verification', () 
     expect(introContent).toContain('setStage(6)');
 
     // Brand name and offline ready badge
-    expect(introContent).toContain('SAHAAYA');
-    expect(introContent).toContain('HEALTH');
+    expect(introContent).toContain('Sahaaya');
+    expect(introContent).toContain('Health');
     expect(introContent).toContain('100% Offline Ready');
 
     // Skip control and accessibility guards
@@ -98,4 +98,44 @@ describe('Splash Animation, Mobile Navigation & Settings Page Verification', () 
     expect(settingsContent).toContain('showResetModal');
     expect(settingsContent).toContain('resetDatabase');
   });
+
+  it('verifies logo geometry precision, color definitions, and SVG scalability', () => {
+    // Exact brand colors
+    expect(logoContent).toContain('#173F91'); // Navy contour
+    expect(logoContent).toContain('#2563EB'); // Vivid healthcare blue
+    expect(logoContent).toContain('#159B78'); // Rich teal green
+    expect(logoContent).toContain('#FFFFFF'); // Pure white figure
+
+    // Cohesive human silhouette (head circle + embracing body path)
+    expect(logoContent).toContain('id="logoHead"');
+    expect(logoContent).toContain('id="logoBody"');
+    expect(logoContent).toContain('cx="50"');
+    expect(logoContent).toContain('viewBox="0 0 100 100"');
+
+    // Identical geometry in public/logo.svg
+    expect(publicLogo).toContain('id="logoHead"');
+    expect(publicLogo).toContain('id="logoBody"');
+    expect(publicLogo).toContain('stroke="#173F91"');
+    expect(publicLogo).toContain('fill="url(#logoBlueGrad)"');
+    expect(publicLogo).toContain('fill="url(#logoTealGrad)"');
+  });
+
+  it('verifies splash screen respects safe-area insets, mobile centering, and skip handler', () => {
+    // Safe area insets
+    expect(introContent).toContain('safe-area-inset-top');
+    expect(introContent).toContain('safe-area-inset-bottom');
+
+    // Accessible Skip button with Telugu localization
+    expect(introContent).toContain('Skip');
+    expect(introContent).toContain('దాటవేయి');
+
+    // Title case typography
+    expect(introContent).toContain('Sahaaya');
+    expect(introContent).toContain('Health');
+
+    // Reduced motion & single run guards
+    expect(introContent).toContain('prefers-reduced-motion');
+    expect(introContent).toContain('sahaaya_intro_seen');
+  });
 });
+

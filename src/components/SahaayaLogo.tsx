@@ -13,31 +13,59 @@ export const SahaayaLogo: React.FC<SahaayaLogoProps> = ({
   animatedStage,
   showGlow = false,
 }) => {
-  // If animatedStage is undefined or >= 4, render the complete logo
-  const stage = animatedStage !== undefined ? animatedStage : 4;
+  // If animatedStage is undefined, render the complete static logo
+  const isStatic = animatedStage === undefined;
+  const stage = isStatic ? 6 : animatedStage;
 
   const styleObj: React.CSSProperties = size
     ? { width: size, height: size }
     : {};
 
-  // Outline drawing calculation (perimeter ~220px)
-  // Stage 1: strokeDashoffset 220 -> 0
+  // Outline perimeter ~236px
   const isOutlineVisible = stage >= 1;
   const isFillVisible = stage >= 2;
-  const isHumanVisible = stage >= 3;
-  const isCompletedGlow = stage >= 4 || showGlow;
+  const isHeadVisible = stage >= 3;
+  const isBodyVisible = stage >= 3;
+  const isLocked = stage >= 4;
+
+  // Geometry paths (viewBox: 0 0 100 100)
+  // Heart left & right contours meeting at cleft (50, 24) and rounded tip (50, 87)
+  const leftContour = "M 50 24 C 38 12, 16 14, 12 34 C 8 52, 22 69, 38 79 C 44 83, 48 86, 50 87";
+  const rightContour = "C 52 86, 56 83, 62 79 C 78 69, 92 52, 88 34 C 84 14, 62 12, 50 24";
+  const fullHeart = `${leftContour} ${rightContour} Z`;
+  const leftHalf = `${leftContour} L 50 24 Z`;
+  const rightHalf = `M 50 87 ${rightContour} L 50 87 Z`;
+  
+  // Cohesive human figure (Head + Embracing Torso Silhouette)
+  const bodySilhouette = "M 50 78 C 47.5 73, 46 64, 45 56 C 39.5 53, 34 48.5, 30.5 42 C 29 39.5, 31.5 38, 33.5 39.5 C 37.5 42, 42.5 46.5, 46.5 49 C 47.5 47, 48.5 45.5, 50 45.5 C 51.5 45.5, 52.5 47, 53.5 49 C 57.5 46.5, 62.5 42, 66.5 39.5 C 68.5 38, 71 39.5, 69.5 42 C 66 48.5, 60.5 53, 55 56 C 54 64, 52.5 73, 50 78 Z";
 
   return (
     <div
       style={styleObj}
       className={`relative inline-flex items-center justify-center shrink-0 ${className}`}
     >
-      {/* Glow effect behind heart */}
-      {isCompletedGlow && (
+      <style>{`
+        @keyframes drawSahaayaHeart {
+          0% {
+            stroke-dashoffset: 240;
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          100% {
+            stroke-dashoffset: 0;
+            opacity: 1;
+          }
+        }
+      `}</style>
+
+      {/* Faint, restrained highlight on lock-in (no heavy neon glow) */}
+      {(showGlow || (stage >= 4 && !isStatic)) && (
         <div
-          className="absolute inset-0 rounded-full blur-md opacity-40 -z-10 transition-opacity duration-500 pointer-events-none"
+          className="absolute inset-0 rounded-full blur-md opacity-25 -z-10 pointer-events-none transition-opacity duration-500"
           style={{
-            background: 'radial-gradient(circle, rgba(21,155,120,0.45) 0%, rgba(23,63,145,0.3) 60%, transparent 80%)'
+            background: 'radial-gradient(circle, rgba(21,155,120,0.3) 0%, rgba(23,63,145,0.15) 60%, transparent 80%)'
           }}
         />
       )}
@@ -46,70 +74,95 @@ export const SahaayaLogo: React.FC<SahaayaLogoProps> = ({
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={`w-full h-full transition-transform duration-500 ${
-          stage === 4 ? 'scale-105 sm:scale-100' : 'scale-100'
+        className={`w-full h-full transform-gpu ${
+          isStatic
+            ? ''
+            : 'transition-transform duration-400 ease-out ' + (isLocked ? 'scale-100' : 'scale-104')
         }`}
         aria-hidden="true"
       >
         <defs>
-          {/* Subtle soft gradient highlights */}
+          {/* Vivid healthcare blue (#2563EB) and rich teal green (#159B78) */}
           <linearGradient id="logoBlueGrad" x1="15" y1="20" x2="50" y2="85" gradientUnits="userSpaceOnUse">
             <stop stopColor="#2563EB" />
-            <stop offset="1" stopColor="#173F91" />
+            <stop offset="1" stopColor="#1E40AF" />
           </linearGradient>
           <linearGradient id="logoTealGrad" x1="85" y1="20" x2="50" y2="85" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#1EC298" />
-            <stop offset="1" stopColor="#108665" />
+            <stop stopColor="#159B78" />
+            <stop offset="1" stopColor="#0D7A5C" />
           </linearGradient>
         </defs>
 
-        {/* Stage 2+: Left Blue Half Fill */}
+        {/* Stage 2+: Left Blue Half Fill (#2563EB) */}
         <path
-          d="M50,24 C40,13 22,12 13,24 C4,36 5,55 22,71 C33,81 44,86 50,88 Z"
+          id="logoLeftFill"
+          d={leftHalf}
           fill="url(#logoBlueGrad)"
-          className="transition-opacity duration-500 ease-out"
-          style={{ opacity: isFillVisible ? 1 : 0 }}
+          className={isStatic ? '' : 'transition-all duration-400 ease-out'}
+          style={{
+            opacity: isFillVisible ? 1 : 0,
+            transformOrigin: '50% 50%',
+            transform: isStatic || isFillVisible ? 'scale(1)' : 'scale(0.96)',
+          }}
         />
 
-        {/* Stage 2+: Right Teal/Green Half Fill */}
+        {/* Stage 2+: Right Teal Green Half Fill (#159B78) */}
         <path
-          d="M50,24 C60,13 78,12 87,24 C96,36 95,55 78,71 C67,81 56,86 50,88 Z"
+          id="logoRightFill"
+          d={rightHalf}
           fill="url(#logoTealGrad)"
-          className="transition-opacity duration-500 ease-out"
-          style={{ opacity: isFillVisible ? 1 : 0 }}
+          className={isStatic ? '' : 'transition-all duration-400 ease-out'}
+          style={{
+            opacity: isFillVisible ? 1 : 0,
+            transformOrigin: '50% 50%',
+            transform: isStatic || isFillVisible ? 'scale(1)' : 'scale(0.96)',
+          }}
         />
 
-        {/* Stage 1+: Outer Heart Outline Stroke */}
+        {/* Stage 1+: Outer Heart Outline Stroke (Navy #173F91) */}
         <path
-          d="M50,24 C40,13 22,12 13,24 C4,36 5,55 22,71 C33,81 44,86 50,88 C56,86 67,81 78,71 C95,55 96,36 87,24 C78,12 60,13 50,24 Z"
+          id="logoOutline"
+          d={fullHeart}
           fill="none"
-          stroke="#0F2B66"
+          stroke="#173F91"
           strokeWidth="3.2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="transition-all duration-400 ease-out"
           style={{
-            strokeDasharray: 230,
-            strokeDashoffset: isOutlineVisible ? 0 : 230,
+            strokeDasharray: isStatic ? 'none' : 240,
+            strokeDashoffset: isStatic ? 0 : (isOutlineVisible ? 0 : 240),
             opacity: isOutlineVisible ? 1 : 0,
+            animation: !isStatic && stage === 1 ? 'drawSahaayaHeart 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards' : 'none',
           }}
         />
 
-        {/* Stage 3+: White Human Figure (Care & Protection Silhouette) */}
-        <g
-          className="transition-all duration-500 ease-out"
-          style={{
-            opacity: isHumanVisible ? 1 : 0,
-            transform: isHumanVisible ? 'translateY(0)' : 'translateY(6px)',
-          }}
-        >
-          {/* Head */}
-          <circle cx="50" cy="37.5" r="5.8" fill="#FFFFFF" />
-
-          {/* Torso and Embracing Raised Arms */}
-          <path
-            d="M50,78 C48.5,74 47.5,63 47,56 C42.5,53.5 37,49 32.5,43 C31.5,41.5 33,39.5 35,40.5 C39,42.5 44,47 47.5,49.5 C48,47.5 48.5,46 50,46 C51.5,46 52,47.5 52.5,49.5 C56,47 61,42.5 65,40.5 C67,39.5 68.5,41.5 67.5,43 C63,49 57.5,53.5 53,56 C52.5,63 51.5,74 50,78 Z"
+        {/* Stage 3+: White Human Figure (Head + Embracing Torso Silhouette) */}
+        <g id="logoHumanFigure">
+          {/* Head - Reveals first in Stage 3 */}
+          <circle
+            id="logoHead"
+            cx="50"
+            cy="35.5"
+            r="5.5"
             fill="#FFFFFF"
+            className={isStatic ? '' : 'transition-all duration-300 ease-out'}
+            style={{
+              opacity: isHeadVisible ? 1 : 0,
+              transformOrigin: '50px 35.5px',
+              transform: isStatic || isHeadVisible ? 'scale(1)' : 'scale(0.3)',
+            }}
+          />
+
+          {/* Torso & Embracing Arms - Glides upward smoothly from base */}
+          <path
+            id="logoBody"
+            d={bodySilhouette}
+            fill="#FFFFFF"
+            className={isStatic ? '' : 'transition-all duration-400 ease-out'}
+            style={{
+              opacity: isBodyVisible ? 1 : 0,
+              transform: isStatic || isBodyVisible ? 'translateY(0)' : 'translateY(10px)',
+            }}
           />
         </g>
       </svg>
